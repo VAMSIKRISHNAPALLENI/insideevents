@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/HibernateMapping DT3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.ag.bytee.beans.register" table="register">
+    	<id name="first" type="string">
+    		<column name="firstname" not-null="true" />
+            <generator class="assigned" />
+        </id>
+        <property name="last" type="string">
+            <column name="lastname" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" not-null="true" />
+        </property>
+        <property name="role" type="string">
+            <column name="role" not-null="true" />
+        </property>
+    </class>
+    <class name="com.ag.bytee.beans.login" table="register">
+    	<id name="user" type="string">
+    		<column name="firstname" not-null="true" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="password" not-null="true" />
+        </property>
+        <property name="role" type="string">
+            <column name="role" not-null="true" />
+        </property>
+    </class>
+    <class name="com.ag.bytee.beans.add" table="adminsuccess">
+    	<id name="eventname" type="string">
+    		<column name="eventname" not-null="true" />
+            <generator class="assigned" />
+        </id>
+        <property name="address" type="string">
+            <column name="address" not-null="true" />
+        </property>
+        <property name="fdate" type="date">
+            <column name="fdate" not-null="true" />
+        </property>
+         <property name="tdate" type="date">
+            <column name="tdate" not-null="true" />
+        </property>
+         <property name="cost" type="double">
+            <column name="cost" not-null="true" />
+        </property>
+    </class>
+    <class name="com.ag.bytee.beans.bookevent" table="eventbooking">
+        <id name="bookingid" type="long">
+    		<column name="bookingid" not-null="true" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" not-null="true" />
+        </property>
+        
+        <property name="emailid" type="string">
+            <column name="emailid" not-null="true" />
+        </property> 
+        <property name="fdate" type="date">
+            <column name="date" not-null="true" />
+        </property>
+        <property name="eventname" type="string">
+            <column name="eventname" not-null="true" />
+        </property>
+        <property name="place" type="string">
+            <column name="place" not-null="true" />
+        </property>
+        
+        <property name="cost" type="double">
+            <column name="cost" not-null="true" />
+        </property>
+        <property name="tax" type="double">
+            <column name="tax" not-null="true" />
+        </property>
+        <property name="total" type="double">
+            <column name="total" not-null="true" />
+        </property>
+         <property name="tdate" type="date">
+            <column name="tdate" not-null="true" />
+        </property>
+        <property name="phno" type="long">
+            <column name="phno" not-null="true" />
+        </property>         
+    </class>
+	</hibernate-mapping>
